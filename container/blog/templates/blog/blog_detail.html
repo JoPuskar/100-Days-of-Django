@@ -1,10 +1,15 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{{ title }}</title>
 </head>
-<body>
-This is body.
+Title: {{ title }}<br/>
+Body: {{ body }}<br/>
+Photo: <img src="{{ photo.url }}">{{ photo.url }}<br/>
+Created At: {{ created_at }}<br/>
+Last Updated: {{ last_updated }}
 </body>
 </html>
