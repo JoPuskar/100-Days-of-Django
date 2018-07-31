@@ -7,6 +7,7 @@
 <body>
 {% for blog in blogs %}
     <a href="{% url 'blog:detail-blog' blog.id %}">{{ blog }}</a><br/>
-{% endfor %}
+{% endfor %}<br/>
+<a href="{% url 'logout' %}"><strong>Logout</strong></a>
 </body>
 </html>

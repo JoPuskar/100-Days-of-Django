@@ -45,14 +45,14 @@ def blog_edit(request, pk):
 
     blog = get_object_or_404(Blog, pk=pk)
     if request.method == 'POST':
-        edit_form = BlogForm(data=request.POST, files=request.FILES)
+        edit_form = BlogForm(data=request.POST, files=request.FILES or None)
 
         print(edit_form.errors)
         if edit_form.is_valid():
             print("valid")
             title = edit_form.cleaned_data['title']
             body = edit_form.cleaned_data['body']
-            photo = request.FILES['photo']
+            photo = edit_form.cleaned_data['photo']
             Blog.objects.filter(id=pk).update(title=title, body=body, photo=photo)
             return redirect(reverse('blog:detail-blog', kwargs={'pk': blog.pk}))
     else:
