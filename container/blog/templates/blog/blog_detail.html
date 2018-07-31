@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <title>{{ title }}</title>
 </head>
-Title: {{ title }}<br/>
+Title: <a href="{% url 'blog:edit-blog' blog.id  %}">{{ title }}</a><br/>
 Body: {{ body }}<br/>
-Photo: <img src="{{ photo.url }}">{{ photo.url }}<br/>
+Photo: {% if photo %}<img src="{{ photo.url }}">{{ photo.url }}{% else %}No Photo!{% endif %}<br/>
 Created At: {{ created_at }}<br/>
 Last Updated: {{ last_updated }}
 </body>
