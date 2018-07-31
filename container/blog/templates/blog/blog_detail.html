@@ -10,6 +10,7 @@ Title: <a href="{% url 'blog:edit-blog' blog.id  %}">{{ title }}</a><br/>
 Body: {{ body }}<br/>
 Photo: {% if photo %}<img src="{{ photo.url }}">{{ photo.url }}{% else %}No Photo!{% endif %}<br/>
 Created At: {{ created_at }}<br/>
-Last Updated: {{ last_updated }}
+Last Updated: {{ last_updated }}<br/>
+<a href="{% url 'blog:blog-list' %}"><b>List</b></a>
 </body>
 </html>
